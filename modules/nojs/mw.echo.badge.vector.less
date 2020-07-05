@@ -1,8 +1,35 @@
 @import '../echo.variables.less';
 
-#p-personal #pt-notifications-alert,
-#p-personal #pt-notifications-notice {
-	margin-right: 0.4em;
+// 20px icon relative to 12px menu font-size.
+@size-icon: 20px;
+@font-size-menu: 12px;
+@size-icon--relative: unit( @size-icon / @font-size-menu, em );
+
+#pt-notifications-alert,
+#pt-notifications-notice {
+	// Leave margin to the skin. Vector has `margin-left: 0.75em;`
+	// margin-right: 0.4em;
+
+	.mw-echo-notifications-badge {
+		margin: 0;
+
+		// FIXME: move to skin.
+		height: @size-icon--relative;
+		width: @size-icon--relative;
+		vertical-align: middle;
+		top: -5px;
+		// FIXME: unset top.
+
+		&:after {
+			top: auto;
+			left: auto;
+
+			// FIXME: move to skin.
+			right: -0.3em;
+			bottom: -0.3em;
+			font-size: 0.9em;
+		}
+	}
 }
 
 .mw-echo-notifications-badge {

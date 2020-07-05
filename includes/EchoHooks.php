@@ -1098,6 +1098,7 @@ class EchoHooks implements RecentChange_saveHook {
 		$links['notifications']['notifications-alert'] = [
 			'href' => $url,
 			'text' => $alertText,
+			'text-wrapper' => 'span',
 			'active' => ( $url == $title->getLocalURL() ),
 			'link-class' => $alertLinkClasses,
 			'data' => [
@@ -1111,6 +1112,7 @@ class EchoHooks implements RecentChange_saveHook {
 		$links['notifications']['notifications-notice'] = [
 			'href' => $url,
 			'text' => $msgText,
+			'text-wrapper' => 'span',
 			'active' => ( $url == $title->getLocalURL() ),
 			'link-class' => $msgLinkClasses,
 			'data' => [
