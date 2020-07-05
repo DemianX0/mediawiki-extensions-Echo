@@ -6,13 +6,21 @@
 .mw-echo-notifications-badge {
 	#pt-notifications-alert &,
 	#pt-notifications-notice & {
+		display: inline-block;
 		position: relative;
-		display: block;
-		width: 20px;
+		width: 20px; // Old browsers.
+		width: 1.25rem; // Adapt to browser font-size.
 		height: 20px;
-		margin: 0 2px;
+		height: 1.25rem;
 		background-repeat: no-repeat;
-		background-position: center center;
+		background-size: 100%;
+		// FIXME: default to vertical centering.
+		vertical-align: middle;
+		// FIXME: `margin` is skin's responsibility.
+		// margin: 0;
+		border-radius: 2px;
+		// FIXME: `top` is skin's responsibility.
+		top: -5px;
 		top: -5px;
 		border-radius: @border-radius-base;
 		cursor: pointer;
@@ -25,11 +33,13 @@
 		&:hover,
 		&:active,
 		&:focus {
-			outline: 0;
+			// FIXME: Restore default browser outline after all cached HTML updated.
+			// outline: 0;
 		}
 
 		&:focus {
-			.box-shadow( ~'0 0 0 1px #fff, 0 0 0 3px #36c' );
+			// FIXME: Remove shadow, use default browser outline after all cached HTML updated.
+			// .box-shadow( ~'0 0 0 1px #fff, 0 0 0 2px #36c' );
 			opacity: 1;
 
 			&:after {
@@ -43,9 +53,10 @@
 			display: inline-block;
 			cursor: pointer;
 			// Bring it back onscreen
-			top: 9px;
+			// FIXME: Remove `text-indent` after all cached HTML updated.
 			text-indent: 0;
-			left: 55%;
+			right: -0.2em;
+			bottom: -0.2em;
 			font-size: 0.9em;
 			font-weight: bold;
 			padding: 0 0.3em;
@@ -68,7 +79,8 @@
 			}
 		}
 
-		&.mw-echo-notifications-badge-all-read {
+		// Don't fight the `&:focus` precedence.
+		&-all-read {
 			opacity: 0.51;
 
 			&:after {
