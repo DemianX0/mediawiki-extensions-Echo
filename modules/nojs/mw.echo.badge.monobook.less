@@ -1,14 +1,30 @@
 @import '../echo.variables.less';
 
-#pt-notifications-notice .mw-echo-notifications-badge,
-#pt-notifications-alert .mw-echo-notifications-badge {
-	display: inline-block;
-	background-size: 16px 16px;
-	background-repeat: no-repeat;
-	top: -1px;
+// 16px icon relative to 11.4617px menu font-size.
+@size-icon: 16px;
+@font-size-menu: 10px * 1.27 * 0.95;
+@size-icon--relative: unit( @size-icon / @font-size-menu, em );
 
-	&:after {
-		top: 6px;
-		left: 45%;
+#pt-notifications-alert,
+#pt-notifications-notice {
+
+	.mw-echo-notifications-badge {
+		margin: 0;
+
+		// FIXME: move to skin.
+		height: @size-icon--relative;
+		width: @size-icon--relative;
+		vertical-align: middle;
+		top: -0.2em;
+
+		&:after {
+			top: auto;
+			left: auto;
+
+			// FIXME: move to skin.
+			right: -0.6em;
+			bottom: -0.6em;
+			font-size: 0.8em;
+		}
 	}
 }

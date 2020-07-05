@@ -1097,9 +1097,11 @@ class EchoHooks implements RecentChange_saveHook {
 			$alertLinkClasses[] = 'mw-echo-notifications-badge-long-label';
 		}
 
-		$alertLink = [
+		$insertUrls = [];
+		$insertUrls[ 'notifications-alert' ] = [
 			'href' => $url,
 			'text' => $alertText,
+			'text-wrapper' => 'span',
 			'active' => ( $url == $title->getLocalURL() ),
 			'class' => $alertLinkClasses,
 			'data' => [
@@ -1108,13 +1110,10 @@ class EchoHooks implements RecentChange_saveHook {
 			],
 		];
 
-		$insertUrls = [
-			'notifications-alert' => $alertLink,
-		];
-
-		$msgLink = [
+		$insertUrls[ 'notifications-notice' ] = [
 			'href' => $url,
 			'text' => $msgText,
+			'text-wrapper' => 'span',
 			'active' => ( $url == $title->getLocalURL() ),
 			'class' => $msgLinkClasses,
 			'data' => [
@@ -1122,8 +1121,6 @@ class EchoHooks implements RecentChange_saveHook {
 				'counter-text' => $msgFormattedCount,
 			],
 		];
-
-		$insertUrls['notifications-notice'] = $msgLink;
 
 		$personal_urls = wfArrayInsertAfter( $personal_urls, $insertUrls, 'userpage' );
 
