@@ -352,12 +352,6 @@
 				],
 				"minerva": [
 					"nojs/mw.echo.badge.minerva.less"
-				],
-				"monobook": [
-					"nojs/mw.echo.badge.monobook.less"
-				],
-				"vector": [
-					"nojs/mw.echo.badge.vector.less"
 				]
 			},
 			"targets": [
