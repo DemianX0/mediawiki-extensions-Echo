@@ -68,6 +68,7 @@
 			// * tooltip-pt-notifications-alert
 			// * tooltip-pt-notifications-notice
 			title: mw.msg( 'tooltip-pt-notifications-' + adjustedTypeString ),
+			$element: config.$element,
 			href: config.href
 		} );
 
