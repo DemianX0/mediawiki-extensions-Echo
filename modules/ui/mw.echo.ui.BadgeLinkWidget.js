@@ -35,7 +35,8 @@
 		if ( config.href !== undefined && OO.ui.isSafeUrl( config.href ) ) {
 			this.$element.attr( 'href', config.href );
 		}
-		if ( this.type === 'alert' ) {
+		if ( config.$element ) {
+		} else if ( this.type === 'alert' ) {
 			this.$element
 				.addClass( 'oo-ui-icon-bell' );
 		} else {

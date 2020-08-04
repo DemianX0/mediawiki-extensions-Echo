@@ -154,12 +154,13 @@ function initDesktop() {
 						hasUnseen: hasUnseenAlerts,
 						badgeIcon: 'bell',
 						$overlay: mw.echo.ui.$overlay,
+						$element: $existingAlertLink,
 						href: $existingAlertLink.attr( 'href' )
 					}
 				);
 
 				// Replace the link button with the ooui button
-				$existingAlertLink.parent().replaceWith( mw.echo.ui.alertWidget.$element );
+				//$existingAlertLink.parent().replaceWith( mw.echo.ui.alertWidget.$element );
 
 				alertModelManager.on( 'allTalkRead', function () {
 					// If there was a talk page notification, get rid of it
@@ -198,12 +199,13 @@ function initDesktop() {
 							hasUnseen: hasUnseenMessages,
 							badgeIcon: 'tray',
 							convertedNumber: badgeLabelMessages,
+							$element: $existingMessageLink,
 							href: $existingMessageLink.attr( 'href' )
 						}
 					);
 
 					// Replace the link button with the ooui button
-					$existingMessageLink.parent().replaceWith( mw.echo.ui.messageWidget.$element );
+					//$existingMessageLink.parent().replaceWith( mw.echo.ui.messageWidget.$element );
 
 					// listen to event countChange and change title only if polling rate is non-zero
 					if ( isLivePollingFeatureEnabledOnWiki() ) {
