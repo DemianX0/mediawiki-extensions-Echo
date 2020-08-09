@@ -67,7 +67,7 @@
 			// The following messages can be used here:
 			// * tooltip-pt-notifications-alert
 			// * tooltip-pt-notifications-notice
-			title: mw.msg( 'tooltip-pt-notifications-' + adjustedTypeString ),
+			//title: mw.msg( 'tooltip-pt-notifications-' + adjustedTypeString ),
 			$element: config.$element,
 			href: config.href
 		} );
