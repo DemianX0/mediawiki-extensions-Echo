@@ -20,7 +20,7 @@
 		mw.echo.ui.BadgeLinkWidget.super.call( this, config );
 
 		// Mixin constructors
-		OO.ui.mixin.LabelElement.call( this, $.extend( {}, config ) ); // Wrap in a <span>.
+		//OO.ui.mixin.LabelElement.call( this, $.extend( {}, config ) ); // Wrap in a <span>.
 		OO.ui.mixin.ButtonElement.call( this, $.extend( { $button: this.$element }, config ) );
 		OO.ui.mixin.TitledElement.call( this, $.extend( { $titled: this.$element }, config ) );
 		OO.ui.mixin.FlaggedElement.call( this, $.extend( {}, config, { $flagged: this.$element } ) );
@@ -69,7 +69,7 @@
 			.attr( 'data-counter-num', numItems )
 			.attr( 'data-counter-text', convertedNumber );
 
-		this.setLabel( mw.msg(
+		this.$element.attr( 'title', mw.msg(
 			this.type === 'alert' ?
 				'echo-notification-alert' :
 				'echo-notification-notice',
