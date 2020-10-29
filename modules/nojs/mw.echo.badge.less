@@ -88,10 +88,11 @@
 			}
 		}
 
-		span {
-			overflow: hidden;
-			width: 100%;
-			display: inline-block;
+		> span {
+			// Hide the text, but keep accessible for screen-readers.
+			// Doesn't interfere with the outline shape.
+			position: absolute;
+			top: -9999px;
 		}
 	}
 
