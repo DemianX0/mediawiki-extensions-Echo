@@ -84,6 +84,13 @@
 				visibility: hidden;
 			}
 		}
+
+		> span {
+			// Hide the text, but keep accessible for screen-readers.
+			// Doesn't interfere with the outline shape.
+			position: absolute;
+			top: -9999px;
+		}
 	}
 
 	&.oo-ui-flaggedElement-unseen,
