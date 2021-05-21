@@ -1,5 +1,6 @@
 @import '../echo.variables.less';
 @import 'mediawiki.mixins.less';
+//@import 'mediawiki.mixins.focus.less';
 
 // 20px icon relative to 16px browser font-size.
 @size-icon: 20px;
@@ -18,6 +19,7 @@
 
 		//background-size: auto 100%;
 		background-size: 100%;
+		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
 
@@ -30,21 +32,13 @@
 		border-radius: @border-radius-base;
 		cursor: pointer;
 		text-decoration: none;
-		line-height: normal;
+		//line-height: normal;
 		.box-sizing( border-box );
 		opacity: 0.87;
 		color: transparent;
 
-		&:hover,
-		&:active,
 		&:focus {
-			// FIXME: Restore default browser outline after all cached HTML updated.
-			// outline: 0;
-		}
-
-		&:focus {
-			// FIXME: Remove shadow, use default browser outline after all cached HTML updated.
-			// .box-shadow( ~'0 0 0 1px #fff, 0 0 0 2px #36c' );
+			//.mixin-focus-outline(); // Default browser focus ring.
 			opacity: 1;
 
 			&:after {
@@ -93,8 +87,7 @@
 		> span {
 			// Hide the text, but keep accessible for screen-readers.
 			// Doesn't interfere with the outline shape.
-			position: absolute;
-			top: -9999px;
+			.mixin-screen-reader-text();
 		}
 	}
 
